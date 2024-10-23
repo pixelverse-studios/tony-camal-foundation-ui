@@ -6,8 +6,8 @@ import {
   ScrollRestoration
 } from '@remix-run/react'
 import type { LinksFunction } from '@remix-run/node'
-
 import '@mantine/core/styles.css'
+import './styles/global.css'
 import { ColorSchemeScript, MantineProvider } from '@mantine/core'
 
 export const links: LinksFunction = () => [

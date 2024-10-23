@@ -1,42 +1,42 @@
-import { useState } from 'react'
-import { Container, Group, Burger } from '@mantine/core'
-import { useDisclosure } from '@mantine/hooks'
-
 import styles from './Nav.module.css'
+import CTAButton from '../CTAButton'
 
 const links = [
-  { link: '/about', label: 'Features' },
-  { link: '/pricing', label: 'Pricing' },
-  { link: '/learn', label: 'Learn' },
-  { link: '/community', label: 'Community' }
+  { link: '#hero', label: 'Mission', type: 'link' },
+  { link: '#testimonials', label: 'Testimonials', type: 'link' },
+  { link: '#newslettersignup', label: 'Donate', type: 'button' }
 ]
-const Nav = () => {
-  const [opened, { toggle }] = useDisclosure(false)
-  const [active, setActive] = useState(links[0].link)
 
-  const items = links.map(link => (
-    <a
-      key={link.label}
-      href={link.link}
-      className={styles.link}
-      data-active={active === link.link || undefined}
-      onClick={event => {
-        event.preventDefault()
-        setActive(link.link)
-      }}>
-      {link.label}
-    </a>
-  ))
+const Nav = () => {
+  const handleScroll = (hash: string) => {
+    const target = document.querySelector(hash)
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <header className={styles.header}>
-      <Container size="md" className={styles.inner}>
-        <Group gap={5} visibleFrom="xs">
-          {items}
-        </Group>
-
-        <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
-      </Container>
+      <div className={styles.header_content}>
+        <h2>Tony Camal Foundation</h2>
+        <div className={styles.menu_item_container}>
+          {links.map((data, index) => {
+            return data.type === 'link' ? (
+              <div
+                key={index}
+                className={styles.link}
+                onClick={e => {
+                  e.preventDefault() // Prevent default anchor behavior
+                  handleScroll(data.link) // Scroll to the section smoothly
+                }}>
+                <span>{data.label}</span>
+              </div>
+            ) : (
+              <CTAButton key={index} label={data.label} />
+            )
+          })}
+        </div>
+      </div>
     </header>
   )
 }

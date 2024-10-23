@@ -1,0 +1,12 @@
+:root {
+  --primary-color: #245b94;
+  --cta-button: #4285f4;
+  --background-color: #e7f2fe;
+  --light-text: #e7f2fe;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--background-color);
+}

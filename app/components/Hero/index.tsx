@@ -1,41 +1,29 @@
-import { Container, Title, Text, Button } from '@mantine/core'
 import styles from './Hero.module.css'
-
+import CTAButton from '../CTAButton'
 const Hero = () => {
   return (
-    <div className={styles.root}>
-      <Container size="lg">
-        <div className={styles.inner}>
-          <div className={styles.content}>
-            <Title className={styles.title}>
-              A{' '}
-              <Text
-                component="span"
-                inherit
-                variant="gradient"
-                gradient={{ from: 'pink', to: 'yellow' }}>
-                fully featured
-              </Text>{' '}
-              React components library
-            </Title>
-
-            <Text className={styles.description} mt={30}>
-              Build fully functional accessible web applications with ease –
-              Mantine includes more than 100 customizable components and hooks
-              to cover you in any situation
-            </Text>
-
-            <Button
-              variant="gradient"
-              gradient={{ from: 'pink', to: 'yellow' }}
-              size="xl"
-              className={styles.control}
-              mt={40}>
-              Get started
-            </Button>
-          </div>
+    <div className={styles.hero_container}>
+      <div className={styles.content}>
+        <div className={styles.video_holder}>
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/qomNXTQsybA"
+            title="Tony Camal Foundation"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen></iframe>
         </div>
-      </Container>
+
+        <div className={styles.mission_section}>
+          <h1 className={styles.title}>Our Mission</h1>
+          <p className={styles.mission_text}>
+            To introduce to our students the physical skills of Judo and its
+            philosophy and traditions. The main principles of Judo are "Maximum
+            Efficiency" and "Mutual Welfare and Benefit."
+          </p>
+          <CTAButton label={'Learn More →'} />
+        </div>
+      </div>
     </div>
   )
 }
