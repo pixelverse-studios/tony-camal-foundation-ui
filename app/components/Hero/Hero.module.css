@@ -1,0 +1,22 @@
+.hero_container {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 5rem;
+  width: 100%;
+  .content {
+    width: 100%;
+    .video_holder {
+      height: 500px;
+    }
+
+    .mission_section {
+      .title {
+        color: var(--primary-color);
+      }
+      .mission_text {
+        color: var(--primary-color);
+        max-width: 40%;
+      }
+    }
+  }
+}

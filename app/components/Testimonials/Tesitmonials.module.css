@@ -1,0 +1,24 @@
+.testimonial_container {
+  padding: 3rem 5rem;
+  .title {
+    color: var(--primary-color);
+  }
+  .card_container {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    padding: 20px;
+
+    .card {
+      height: 250px;
+      width: 100%;
+      background-color: var(--primary-color);
+      color: var(--light-text);
+      padding: 20px;
+      border-radius: 4px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    }
+  }
+}
