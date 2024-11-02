@@ -1,0 +1,14 @@
+.callToAction {
+  border: 1px solid var(--primary);
+  background-color: var(--primary);
+  color: var(--off-white);
+  padding: 0.8rem;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: var(--hover);
+
+  &:hover {
+    background-color: var(--off-white);
+    color: var(--primary);
+  }
+}

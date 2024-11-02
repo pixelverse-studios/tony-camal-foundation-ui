@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import './reset.css';
+
+:root {
+  --primary: #245b94;
+  --off-white: #e7f2fe;
+  --dark-text: #1d4c7a;
+  --accent: #d1e3fd;
+
+  --header-height: 5.5rem;
+  --footer-height: 2rem;
+  --hover: 0.25s ease-in-out;
+  --max-width: 1500px;
+  --rounded-edges: 8px;
+  --border-size: 1px;
+  --horizontal-padding: 4rem;
+
+  @media screen and (max-width: 800px) {
+    --horizontal-padding: 2rem;
+  }
+}
+
+html,
+body {
+  font-size: 16px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  height: 100%;
+  line-height: 1.4rem;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  background-color: var(--off-white);
+}
+
+main {
+  padding: var(--header-height) var(--horizontal-padding);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+main > section {
+  height: calc(100dvh - var(--header-height));
+  scroll-margin-top: var(--header-height);
+}
+
+.callToAction {
+  border: var(--border-size) solid var(--off-black);
+  border-radius: var(--rounded-edges);
+  background-color: var(--primary);
+  color: var(--off-black);
+  transition: var(--hover);
+  padding: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+
+  &:hover {
+    background-color: black;
+    color: var(--primary);
+  }
+
+  &:disabled {
+    color: var(--off-black);
+    background-color: darkgray;
+    cursor: not-allowed;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 1.7rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  line-height: 2rem;
+}
