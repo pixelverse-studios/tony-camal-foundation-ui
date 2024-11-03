@@ -1,0 +1,81 @@
+.Mission {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--vertical-gap);
+
+  .videoContainer {
+    width: 100%;
+    height: 65vh;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--rounded-edges);
+
+    ::before {
+      content: '';
+      display: block;
+      padding-top: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100) */
+    }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  button {
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    span {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+}
+
+.Explanation {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vertical-gap);
+
+  .explContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 3rem;
+
+    article {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+
+  img {
+    border: 1px solid var(--accent);
+    border-radius: var(--rounded-edges);
+    width: 100%;
+  }
+
+  @media screen and (max-width: 750px) {
+    .explContent {
+      grid-template-columns: 1fr;
+    }
+
+    img {
+      height: 25rem;
+      width: auto;
+      margin: auto;
+    }
+  }
+}

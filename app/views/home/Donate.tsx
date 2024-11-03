@@ -1,6 +1,6 @@
 const Donate = () => {
   return (
-    <section id="donate">
+    <section id="donate" className={`fullViewSection`}>
       Donate
       <div></div>
     </section>

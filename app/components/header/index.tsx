@@ -16,7 +16,7 @@ const NavLinks = ({
   <ul className={styles.navLinks}>
     <li
       className={`${styles.navLink} ${
-        active === 'mission' ? styles.active : ''
+        active === 'mission' || active === '' ? styles.active : ''
       }`}
       onClick={() => onClick('mission')}>
       <span>Mission</span>
