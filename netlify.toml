@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "public" # Ensure this is set correctly
+  functions = "netlify/functions" # Set the path for serverless functions
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/server"
+  status = 200
