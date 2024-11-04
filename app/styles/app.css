@@ -48,7 +48,7 @@ main {
 }
 
 .fullViewSection {
-  height: calc(100dvh - var(--vertical-offset));
+  min-height: calc(100dvh - var(--vertical-offset));
   scroll-margin-top: var(--vertical-offset);
   margin-top: 1rem;
   padding-bottom: 2rem;

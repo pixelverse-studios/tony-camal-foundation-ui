@@ -15,7 +15,9 @@ const Hero = () => {
 
   return (
     <section>
-      <section id="mission" className={`${styles.Mission} fullViewSection`}>
+      <section
+        id="mission"
+        className={`${styles.Mission} ${styles.viewContent} fullViewSection`}>
         <div className={styles.videoContainer}>
           <iframe
             src="https://www.youtube.com/embed/qomNXTQsybA?autoplay=1&mute=1"
@@ -49,7 +51,7 @@ const Hero = () => {
       </section>
       <section
         id="missionExplanation"
-        className={`${styles.Explanation} fullViewSection`}>
+        className={`${styles.Explanation} ${styles.viewContent} fullViewSection`}>
         <h1>Maximum Efficiency & Mutual Benefit</h1>
         <div className={styles.explContent}>
           <article>
