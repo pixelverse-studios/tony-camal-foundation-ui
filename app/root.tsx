@@ -12,6 +12,7 @@ import { MantineProvider, createTheme } from '@mantine/core'
 import Header from './components/header'
 import Footer from './components/footer'
 
+import './styles/reset.css'
 import '@mantine/core/styles.css'
 import './styles/app.css'
 
