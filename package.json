@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "remix dev",
-    "build": "remix build && npm run build:functions",
+    "build": "remix build",
+    "start": "node build/index.js",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-    "start": "remix-serve build",
     "typecheck": "tsc"
   },
   "dependencies": {
