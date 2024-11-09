@@ -4,10 +4,10 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix vite:build",
-    "dev": "remix vite:dev",
+    "build": "remix build",
+    "dev": "remix dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-    "start": "remix-serve ./build/server/index.js",
+    "start": "remix-serve build",
     "typecheck": "tsc"
   },
   "dependencies": {
@@ -15,6 +15,7 @@
     "@mantine/form": "^7.13.4",
     "@mantine/hooks": "^7.13.4",
     "@mantine/notifications": "^7.13.4",
+    "@remix-run/netlify": "^1.19.3",
     "@remix-run/node": "^2.12.0",
     "@remix-run/react": "^2.12.0",
     "@remix-run/serve": "^2.12.0",

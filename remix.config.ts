@@ -1,10 +1,12 @@
 // remix.config.ts
-// import type { RemixConfig } from '@remix-run/dev'
+import type { AppConfig } from '@remix-run/dev'
 
-export default {
-  appDirectory: 'app',
-  assetsBuildDirectory: 'public/build',
+const config: AppConfig = {
+  serverBuildPath: 'netlify/functions/index.js',
   publicPath: '/build/',
-  serverBuildTarget: 'netlify'
-  // ... other configurations
+  server: '@remix-run/netlify',
+  // Optional: specify ignored files
+  ignoredRouteFiles: ['**/.*']
 }
+
+export default config
