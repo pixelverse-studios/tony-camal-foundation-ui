@@ -4,6 +4,7 @@
     "es2021": true
   },
   "extends": [
+    "next",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
@@ -25,7 +26,6 @@
     "@next/next/no-img-element": "off",
     "no-useless-escape": "off",
     "react-hooks/rules-of-hooks": "warn", // Checks rules of Hooks
-    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
-    "react/no-unescaped-entities": ["off"]
+    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
   }
 }

@@ -1,0 +1,21 @@
+.callToAction {
+  border: 1px solid var(--secondary);
+  background-color: var(--secondary);
+  color: var(--off-white);
+  padding: 0.8rem;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: var(--hover);
+
+  &:hover {
+    background-color: var(--off-white);
+    color: var(--secondary);
+  }
+
+  &:disabled {
+    background-color: darkgray;
+    border-color: darkgray;
+    color: var(--off-white);
+    cursor: not-allowed;
+  }
+}
