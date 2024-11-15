@@ -7,9 +7,15 @@
   --dark-text: #1d4c7a;
   --accent: #d1e3fd;
 
+  --charcoal: #323232;
+  --white: #dcdcdc;
+  --black: #262626;
+  --red: #e91c00;
+
   --border-size: 1px;
   --footer-height: 2rem;
   --header-height: 5.5rem;
+  --vertical-padding: 5.5rem;
   --horizontal-padding: 4rem;
   --hover: 0.25s ease-in-out;
   --max-width: 1500px;
@@ -19,6 +25,7 @@
 
   @media screen and (max-width: 800px) {
     --horizontal-padding: 2rem;
+    --vertical-padding: 7rem;
   }
 }
 
@@ -29,20 +36,28 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   height: 100%;
-  color: var(--dark-text);
+  color: var(--white);
+  letter-spacing: 1px;
 }
 
 main {
-  padding: var(--header-height) var(--horizontal-padding);
+  padding: var(--vertical-padding) var(--horizontal-padding);
   max-width: var(--max-width);
   margin: 0 auto;
   width: 100%;
 
   display: grid;
   grid-template-rows: 1fr auto;
-  background-color: var(--off-white);
-  color: var(--dark-text);
+  background-color: var(--charcoal);
+  color: var(--white);
   line-height: 1.5;
+
+  h1 {
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--white);
+    line-height: 2rem;
+  }
 }
 
 .fullViewSection {
@@ -56,7 +71,7 @@ main {
 .callToAction {
   border: var(--border-size) solid var(--off-black);
   border-radius: var(--rounded-edges);
-  background-color: var(--primary);
+  background-color: var(--red);
   color: var(--off-black);
   transition: var(--hover);
   padding: 0.5rem;
@@ -65,12 +80,12 @@ main {
 
   &:hover {
     background-color: black;
-    color: var(--primary);
+    color: var(--red);
   }
 
   &:disabled {
-    color: var(--off-black);
-    background-color: darkgray;
+    color: var(--charcoal);
+    background-color: var(--charcoal);
     cursor: not-allowed;
   }
 }
@@ -78,11 +93,4 @@ main {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-h1 {
-  font-weight: 800;
-  font-size: 1.4rem;
-  color: var(--primary);
-  line-height: 2rem;
 }

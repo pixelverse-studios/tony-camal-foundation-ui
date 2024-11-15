@@ -8,7 +8,8 @@ import Footer from '@/components/footer'
 
 import '@/styles/reset.scss'
 import '@mantine/core/styles.css'
-import '@/styles/app.scss'
+// import '@/styles/app.scss'
+import '../styles/app.scss'
 
 export const metadata: Metadata = {
   title: 'The Anthony Camal Foundation',
@@ -18,20 +19,21 @@ export const metadata: Metadata = {
 const theme = createTheme({
   fontFamily: 'IBM Plex Sans',
   colors: {
-    gold: [
-      '#E3EDF7',
-      '#C8D9EE',
-      '#A9C3E4',
-      '#86ABD9',
-      '#5E8DCB',
-      '#245B94',
-      '#1F5084',
-      '#1A4673',
-      '#153B62',
-      '#0E2847'
+    red: [
+      '#FFF9F2',
+      '#FCF0E3',
+      '#FAD8BB',
+      '#F5B893',
+      '#F07248',
+      '#e91c00',
+      '#D11800',
+      '#AD1100',
+      '#8C0E00',
+      '#690900',
+      '#420600'
     ]
   },
-  primaryColor: 'blue',
+  primaryColor: 'red',
   radius: {
     custom: '9px'
   },

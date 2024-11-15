@@ -1,7 +1,7 @@
 .footer {
   padding: var(--vertical-gap) var(--horizontal-padding);
-  background-color: var(--primary);
-  color: var(--off-white);
+  background-color: var(--black);
+  color: var(--white);
   display: flex;
   gap: 2rem;
   justify-content: space-between;
@@ -23,18 +23,19 @@
     }
 
     button {
-      background-color: var(--secondary);
-      color: var(--off-white);
-      border: 1px solid var(--secondary);
+      background-color: var(--red);
+      color: var(--white);
+      font-size: 1.1rem;
+      border: 1px solid var(--red);
       border-radius: var(--rounded-edges);
       transition: var(--hover);
       padding: 1rem;
-      font-weight: 500;
+      font-weight: 600;
       cursor: pointer;
 
       &:hover {
-        background-color: var(--off-white);
-        color: var(--secondary);
+        background-color: var(--white);
+        color: var(--red);
       }
     }
   }
@@ -64,38 +65,38 @@
       justify-content: flex-end;
 
       .submit {
-        border: 1px solid var(--primary);
+        border: 1px solid var(--red);
         border-radius: var(--rounded-edges);
-        background-color: var(--primary);
-        color: var(--off-white);
+        background-color: var(--red);
+        color: var(--white);
         transition: var(--hover);
         padding: 0.5rem;
         cursor: pointer;
 
         &:hover {
-          background-color: var(--secondary);
-          color: var(--off-white);
+          background-color: var(--white);
+          color: var(--red);
         }
 
         &:disabled {
-          color: var(--off-white);
-          background-color: #3b3b3b;
+          color: var(--white);
+          background-color: var(--charcoal);
           cursor: not-allowed;
         }
       }
 
       .cancel {
-        border: 1px solid tomato;
+        border: 1px solid var(--red);
         border-radius: var(--rounded-edges);
-        background-color: var(--off-black);
-        color: var(--off-white);
+        background-color: var(--black);
+        color: var(--red);
         transition: var(--hover);
         padding: 0.5rem;
         cursor: pointer;
 
         &:hover {
-          background-color: tomato;
-          color: var(--dark-text);
+          background-color: var(--red);
+          color: var(--black);
         }
       }
     }
