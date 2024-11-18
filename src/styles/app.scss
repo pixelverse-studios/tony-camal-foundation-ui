@@ -37,17 +37,17 @@ body {
   color: var(--white) !important;
   letter-spacing: 1px !important;
   line-height: 1.2 !important;
+  background-color: var(--charcoal) !important;
 }
 
 main {
-  padding: var(--vertical-padding) var(--horizontal-padding);
   max-width: var(--max-width);
+  padding: var(--vertical-padding) var(--horizontal-padding);
   margin: 0 auto;
   width: 100%;
 
   display: grid;
   grid-template-rows: 1fr auto;
-  background-color: var(--charcoal);
   color: var(--white);
 
   h1 {

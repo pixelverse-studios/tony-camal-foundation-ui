@@ -59,55 +59,57 @@ const Footer = () => {
   const canSubmit = Object.values(form.getValues()).every(val => val !== '')
   return (
     <footer className={styles.footer}>
-      <section className={styles.subscribe}>
-        <div className={styles.left}>
-          <img src={Logo.src} alt="logo" />
-        </div>
-        <div className={styles.right}>
-          <p>
-            Join our newsletter to support and follow along with our growing
-            community!
-          </p>
-          <form onSubmit={onSubmit}>
-            <LoadingOverlay
-              visible={loading}
-              loaderProps={{ children: 'Loading...' }}
-            />
-            <div className={styles.doubleFields}>
+      <div className={styles.footerContent}>
+        <section className={styles.subscribe}>
+          <div className={styles.left}>
+            <img src={Logo.src} alt="logo" />
+          </div>
+          <div className={styles.right}>
+            <p>
+              Join our newsletter to support and follow along with our growing
+              community!
+            </p>
+            <form onSubmit={onSubmit}>
+              <LoadingOverlay
+                visible={loading}
+                loaderProps={{ children: 'Loading...' }}
+              />
+              <div className={styles.doubleFields}>
+                <TextInput
+                  label="First Name"
+                  leftSection={<FaUser />}
+                  leftSectionPointerEvents="none"
+                  size="md"
+                  variant="filled"
+                  {...form.getInputProps('firstName')}
+                />
+                <TextInput
+                  label="Last Name"
+                  leftSection={<FaUserTie />}
+                  leftSectionPointerEvents="none"
+                  size="md"
+                  variant="filled"
+                  {...form.getInputProps('lastName')}
+                />
+              </div>
               <TextInput
-                label="First Name"
-                leftSection={<FaUser />}
+                label="Email"
+                leftSection={<FaAt />}
                 leftSectionPointerEvents="none"
                 size="md"
                 variant="filled"
-                {...form.getInputProps('firstName')}
+                {...form.getInputProps('email')}
               />
-              <TextInput
-                label="Last Name"
-                leftSection={<FaUserTie />}
-                leftSectionPointerEvents="none"
-                size="md"
-                variant="filled"
-                {...form.getInputProps('lastName')}
-              />
-            </div>
-            <TextInput
-              label="Email"
-              leftSection={<FaAt />}
-              leftSectionPointerEvents="none"
-              size="md"
-              variant="filled"
-              {...form.getInputProps('email')}
-            />
-            <button className={styles.submit} disabled={!canSubmit}>
-              Submit
-            </button>
-          </form>
-        </div>
-      </section>
-      <section className={styles.copyright}>
-        Tony Camal Foundation &copy;{year}
-      </section>
+              <button className={styles.submit} disabled={!canSubmit}>
+                Submit
+              </button>
+            </form>
+          </div>
+        </section>
+        <section className={styles.copyright}>
+          Tony Camal Foundation &copy;{year}
+        </section>
+      </div>
     </footer>
   )
 }

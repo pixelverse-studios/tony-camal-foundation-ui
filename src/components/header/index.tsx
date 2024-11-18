@@ -52,10 +52,6 @@ const Header = () => {
 
   const [active, setActive] = useState<string>('')
 
-  const logoText = useMemo(
-    () => (windowWidth <= 1000 ? 'TCF' : 'Tony Camal Foundation'),
-    [windowWidth]
-  )
   const showBurger = useMemo(() => windowWidth < 900, [windowWidth])
 
   const onItemClick = useCallback(
@@ -79,37 +75,36 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      {/* <span className={styles.logo} onClick={() => onItemClick('')}>
-        {logoText}
-      </span> */}
-      <div className={styles.logoContainer}>
-        <img src={Logo.src} className={styles.logo} alt="logo" />
-        <p>
-          The Anthony Camal
-          <span className={styles.after}>Foundation</span>
-        </p>
+      <div className={styles.headerContent}>
+        <div className={styles.logoContainer}>
+          <img src={Logo.src} className={styles.logo} alt="logo" />
+          <p>
+            The Anthony Camal
+            <span className={styles.after}>Foundation</span>
+          </p>
+        </div>
+        {showBurger ? (
+          <>
+            <Burger
+              className={styles.bigmac}
+              onClick={opened ? close : open}
+              opened={opened}
+            />
+            <Drawer
+              overlayProps={{ backgroundOpacity: 0, blur: 0 }}
+              className={styles.mobileNavDrawer}
+              size="100%"
+              position="bottom"
+              opened={opened}
+              onClose={close}
+              withCloseButton={false}>
+              <NavLinks active={active} onClick={onItemClick} />
+            </Drawer>
+          </>
+        ) : (
+          <NavLinks active={active} onClick={onItemClick} />
+        )}
       </div>
-      {showBurger ? (
-        <>
-          <Burger
-            className={styles.bigmac}
-            onClick={opened ? close : open}
-            opened={opened}
-          />
-          <Drawer
-            overlayProps={{ backgroundOpacity: 0, blur: 0 }}
-            className={styles.mobileNavDrawer}
-            size="100%"
-            position="bottom"
-            opened={opened}
-            onClose={close}
-            withCloseButton={false}>
-            <NavLinks active={active} onClick={onItemClick} />
-          </Drawer>
-        </>
-      ) : (
-        <NavLinks active={active} onClick={onItemClick} />
-      )}
     </header>
   )
 }
