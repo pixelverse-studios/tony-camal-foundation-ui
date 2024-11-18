@@ -8,7 +8,7 @@ import { notifications } from '@mantine/notifications'
 import { FaUser, FaAt, FaUserTie } from 'react-icons/fa6'
 
 // import Logo from '@/assets/Split_Nobg.png'
-import Logo from '@/assets/Bottom_nobg2.png'
+import Logo from '@/assets/Bottom_transparent2.png'
 import { handleResponseStatus } from '@/utls/http'
 import styles from './Footer.module.scss'
 
