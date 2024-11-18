@@ -77,7 +77,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.headerContent}>
         <div className={styles.logoContainer}>
-          <img src={Logo.src} className={styles.logo} alt="logo" />
+          <img onClick={() => onItemClick('/')} src={Logo.src} className={styles.logo} alt="logo" />
           <p>
             The Anthony Camal
             <span className={styles.after}>Foundation</span>
