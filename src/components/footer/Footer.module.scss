@@ -1,5 +1,5 @@
 .footer {
-  padding: var(--vertical-gap) var(--horizontal-padding);
+  padding: 1rem var(--horizontal-padding);
   background-color: var(--black);
   color: var(--white);
   display: flex;
@@ -7,98 +7,106 @@
   justify-content: space-between;
   flex-direction: column;
 
+  .subscribe {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+
+    .left {
+      flex: 1;
+
+      img {
+        border-radius: var(--rounded-edges);
+        width: auto;
+        height: 20rem;
+      }
+    }
+
+    .right {
+      flex: 1;
+      p {
+        font-size: 1.2rem;
+        padding: 1rem 0;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .doubleFields {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          align-items: flex-end;
+          grid-gap: 2rem;
+        }
+
+        button {
+          height: 2.6rem;
+          width: 50%;
+          border: 1px solid var(--red);
+          background-color: var(--red);
+          color: var(--white);
+          border-radius: var(--rounded-edges);
+          transition: var(--hover);
+          padding: 0.5rem;
+          cursor: pointer;
+          font-weight: 600;
+          font-size: 1.1rem;
+
+          &:hover {
+            background-color: var(--white);
+            color: var(--red);
+          }
+
+          &:disabled {
+            color: var(--white);
+            background-color: var(--inactive);
+            border-color: transparent;
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+  }
+
   .copyright {
     text-align: center;
   }
 
-  .follow {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+  @media screen and (max-width: 900px) {
+    padding: 0;
+    background-color: var(--charcoal);
 
-    p {
-      width: 20rem;
-      font-size: 1.2rem;
-    }
+    .subscribe {
+      padding: 0;
+      flex-direction: column-reverse;
 
-    button {
-      background-color: var(--red);
-      color: var(--white);
-      font-size: 1.1rem;
-      border: 1px solid var(--red);
-      border-radius: var(--rounded-edges);
-      transition: var(--hover);
-      padding: 1rem;
-      font-weight: 600;
-      cursor: pointer;
+      .left {
+        padding: 1rem var(--horizontal-padding);
+        background-color: var(--charcoal);
 
-      &:hover {
-        background-color: var(--white);
-        color: var(--red);
-      }
-    }
-  }
-}
-.subscribeModal {
-  h2 {
-    font-size: 1.3rem;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    .doubleFields {
-      display: flex;
-      gap: 1rem;
-
-      & > * {
-        flex: 1;
-      }
-    }
-
-    .buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: flex-end;
-
-      .submit {
-        border: 1px solid var(--red);
-        border-radius: var(--rounded-edges);
-        background-color: var(--red);
-        color: var(--white);
-        transition: var(--hover);
-        padding: 0.5rem;
-        cursor: pointer;
-
-        &:hover {
-          background-color: var(--white);
-          color: var(--red);
-        }
-
-        &:disabled {
-          color: var(--white);
-          background-color: var(--charcoal);
-          cursor: not-allowed;
+        img {
+          margin: auto;
+          height: auto;
+          width: 100%;
         }
       }
 
-      .cancel {
-        border: 1px solid var(--red);
-        border-radius: var(--rounded-edges);
+      .right {
+        padding: 1rem var(--horizontal-padding) 2rem var(--horizontal-padding);
         background-color: var(--black);
-        color: var(--red);
-        transition: var(--hover);
-        padding: 0.5rem;
-        cursor: pointer;
 
-        &:hover {
-          background-color: var(--red);
-          color: var(--black);
+        form > button {
+          width: 100%;
         }
       }
+    }
+
+    .copyright {
+      padding: 0 1rem 1rem 1rem;
     }
   }
 }

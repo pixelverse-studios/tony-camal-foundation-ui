@@ -46,13 +46,31 @@
   z-index: 10;
   height: var(--header-height);
 
-  .logo {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--red);
-    cursor: pointer;
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.7rem;
+    word-wrap: break-word;
+    width: 18rem;
+    color: var(--white);
+
+    .logo {
+      height: 4rem;
+    }
+
+    p {
+      font-family: 'Bebas Neue', sans-serif;
+      display: flex;
+      flex-wrap: wrap;
+
+      .after {
+        font-size: 1.4rem;
+      }
+    }
   }
 }
+
 
 .mobileNavDrawer {
   background-color: var(--black);

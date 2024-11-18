@@ -1,17 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --primary: #245b94;
-  --secondary: #4285f4;
-  --off-white: #e7f2fe;
-  --dark-text: #1d4c7a;
-  --accent: #d1e3fd;
-
   --charcoal: #323232;
   --white: #dcdcdc;
   --black: #262626;
   --red: #e91c00;
+  --inactive: rgba(233, 28, 0, 0.1);
 
+  // --box-shadow: 0px 4px 4px 0px var(--black);
   --border-size: 1px;
   --footer-height: 2rem;
   --header-height: 5.5rem;
@@ -23,21 +19,24 @@
   --vertical-gap: 1.5rem;
   --vertical-offset: calc(var(--header-height) + 1rem);
 
+  --input-bg: var(--charcoal);
+  --input-radius: var(--rounded-edges);
+
   @media screen and (max-width: 800px) {
     --horizontal-padding: 2rem;
     --vertical-padding: 7rem;
   }
 }
 
-html,
 body {
-  font-size: 16px;
-  font-family: 'Work Sans', sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  height: 100%;
-  color: var(--white);
-  letter-spacing: 1px;
+  font-family: 'Work Sans', sans-serif !important;
+  font-size: 16px !important;
+  font-optical-sizing: auto !important;
+  font-style: normal !important;
+  height: 100% !important;
+  color: var(--white) !important;
+  letter-spacing: 1px !important;
+  line-height: 1.2 !important;
 }
 
 main {
@@ -50,7 +49,6 @@ main {
   grid-template-rows: 1fr auto;
   background-color: var(--charcoal);
   color: var(--white);
-  line-height: 1.5;
 
   h1 {
     font-weight: 800;

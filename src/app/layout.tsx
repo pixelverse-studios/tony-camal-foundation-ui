@@ -8,7 +8,6 @@ import Footer from '@/components/footer'
 
 import '@/styles/reset.scss'
 import '@mantine/core/styles.css'
-// import '@/styles/app.scss'
 import '../styles/app.scss'
 
 export const metadata: Metadata = {
@@ -49,6 +48,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <MantineProvider theme={theme} defaultColorScheme="dark">
+          {/* <Header2 /> */}
           <Header />
           {children}
           <Footer />

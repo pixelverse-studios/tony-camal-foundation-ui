@@ -4,6 +4,7 @@ import { useState, useMemo, useCallback } from 'react'
 import { Drawer, Burger } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 
+import Logo from '@/assets/CircleImage.png'
 import CallToAction from '../callToAction'
 import useWindowWidth from '@/utls/hooks/useWindowWidth'
 import styles from './Header.module.scss'
@@ -22,6 +23,13 @@ const NavLinks = ({
       }`}
       onClick={() => onClick('mission')}>
       <span>Mission</span>
+    </li>
+    <li
+      className={`${styles.navLink} ${
+        active === 'missionExplanation' ? styles.active : ''
+      }`}
+      onClick={() => onClick('missionExplanation')}>
+      <span>About</span>
     </li>
     <li
       className={`${styles.navLink} ${
@@ -48,7 +56,7 @@ const Header = () => {
     () => (windowWidth <= 1000 ? 'TCF' : 'Tony Camal Foundation'),
     [windowWidth]
   )
-  const showBurger = useMemo(() => windowWidth < 750, [windowWidth])
+  const showBurger = useMemo(() => windowWidth < 900, [windowWidth])
 
   const onItemClick = useCallback(
     (section: string) => {
@@ -71,9 +79,16 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <span className={styles.logo} onClick={() => onItemClick('')}>
+      {/* <span className={styles.logo} onClick={() => onItemClick('')}>
         {logoText}
-      </span>
+      </span> */}
+      <div className={styles.logoContainer}>
+        <img src={Logo.src} className={styles.logo} alt="logo" />
+        <p>
+          The Anthony Camal
+          <span className={styles.after}>Foundation</span>
+        </p>
+      </div>
       {showBurger ? (
         <>
           <Burger
