@@ -60,7 +60,7 @@ const Header = () => {
         close()
       }
 
-      if (section === '') {
+      if (section === '' || section === '/') {
         window.scrollTo({ top: 0, behavior: 'smooth' })
       }
 
@@ -76,8 +76,8 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.headerContent}>
-        <div className={styles.logoContainer}>
-          <img onClick={() => onItemClick('/')} src={Logo.src} className={styles.logo} alt="logo" />
+        <div onClick={() => onItemClick('/')} className={styles.logoContainer}>
+          <img src={Logo.src} className={styles.logo} alt="logo" />
           <p>
             The Anthony Camal
             <span className={styles.after}>Foundation</span>
