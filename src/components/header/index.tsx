@@ -1,13 +1,19 @@
 'use client'
 
-import { useState, useMemo, useCallback } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { Drawer, Burger } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 
 import Logo from '@/assets/CircleImage.png'
 import CallToAction from '../callToAction'
 import useWindowWidth from '@/utls/hooks/useWindowWidth'
+import useScrollWatcher from '@/utls/hooks/useScrollWatcher'
 import styles from './Header.module.scss'
+
+const MISSION = 'mission'
+const ABOUT = 'missionExplanation'
+const TESTIMONIALS = 'testimonials'
+const DONATE = 'donate'
 
 const NavLinks = ({
   active,
@@ -19,28 +25,26 @@ const NavLinks = ({
   <ul className={styles.navLinks}>
     <li
       className={`${styles.navLink} ${
-        active === 'mission' || active === '' ? styles.active : ''
+        active === MISSION || active === '' ? styles.active : ''
       }`}
-      onClick={() => onClick('mission')}>
+      onClick={() => onClick(MISSION)}>
       <span>Mission</span>
     </li>
     <li
-      className={`${styles.navLink} ${
-        active === 'missionExplanation' ? styles.active : ''
-      }`}
-      onClick={() => onClick('missionExplanation')}>
+      className={`${styles.navLink} ${active === ABOUT ? styles.active : ''}`}
+      onClick={() => onClick(ABOUT)}>
       <span>About</span>
     </li>
     <li
       className={`${styles.navLink} ${
-        active === 'testimonials' ? styles.active : ''
+        active === TESTIMONIALS ? styles.active : ''
       }`}
-      onClick={() => onClick('testimonials')}>
+      onClick={() => onClick(TESTIMONIALS)}>
       <span>Testimonials</span>
     </li>
     <li
-      className={active === 'donate' ? styles.active : ''}
-      onClick={() => onClick('donate')}>
+      className={active === DONATE ? styles.active : ''}
+      onClick={() => onClick(DONATE)}>
       <CallToAction label="Donate" />
     </li>
   </ul>
@@ -50,9 +54,14 @@ const Header = () => {
   const windowWidth = useWindowWidth()
   const [opened, { open, close }] = useDisclosure(false)
 
-  const [active, setActive] = useState<string>('')
+  const [active, setActive] = useState<string>(MISSION)
 
   const showBurger = useMemo(() => windowWidth < 900, [windowWidth])
+
+  useScrollWatcher(MISSION, setActive)
+  useScrollWatcher(ABOUT, setActive)
+  useScrollWatcher(TESTIMONIALS, setActive)
+  useScrollWatcher(DONATE, setActive)
 
   const onItemClick = useCallback(
     (section: string) => {
