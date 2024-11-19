@@ -1,9 +1,8 @@
 'use client'
 
 import { useState, useCallback, FormEvent } from 'react'
-import { useDisclosure } from '@mantine/hooks'
-import { TextInput, Modal, LoadingOverlay } from '@mantine/core'
-import { hasLength, isEmail, useForm } from '@mantine/form'
+import { TextInput, LoadingOverlay } from '@mantine/core'
+import { useForm } from '@mantine/form'
 import { notifications } from '@mantine/notifications'
 import { FaUser, FaAt, FaUserTie } from 'react-icons/fa6'
 
@@ -13,7 +12,6 @@ import { handleResponseStatus } from '@/utls/http'
 import styles from './Footer.module.scss'
 
 const Footer = () => {
-  const [opened, { open, close }] = useDisclosure(false)
   const form = useForm({
     mode: 'controlled',
     initialValues: { firstName: '', lastName: '', email: '' }
@@ -29,32 +27,40 @@ const Footer = () => {
 
   const year = new Date().getFullYear()
 
-  const onSubmit = useCallback(async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setLoading(true)
-    try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_HOST}/newsletter/${process.env.NEXT_PUBLIC_SLUG}`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(form.getValues())
-        }
-      )
-      return handleResponseStatus(res, notifications, 'Newsletter subscription')
-    } catch (error) {
-      notifications.show({
-        color: 'red',
-        title: 'Error',
-        message: 'There was an issue trying to subscribe to the newsletter'
-      })
-    } finally {
-      setLoading(false)
-      close()
-    }
-  }, [])
+  const onSubmit = useCallback(
+    async (e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault()
+      setLoading(true)
+      try {
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_API_HOST}/newsletter/${process.env.NEXT_PUBLIC_SLUG}`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(form.getValues())
+          }
+        )
+        return handleResponseStatus(
+          res,
+          notifications,
+          'Newsletter subscription'
+        )
+      } catch (error) {
+        console.warn(error)
+        notifications.show({
+          color: 'red',
+          title: 'Error',
+          message: 'There was an issue trying to subscribe to the newsletter'
+        })
+      } finally {
+        setLoading(false)
+        close()
+      }
+    },
+    [form]
+  )
 
   const canSubmit = Object.values(form.getValues()).every(val => val !== '')
   return (

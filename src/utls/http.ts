@@ -17,16 +17,25 @@ export const handleResponseStatus = (
   switch (res.status) {
     case SUCCESS:
     case SUCCESS_NO_CONTENT:
-      alert.show({ color: 'blue', title: 'Success', message: successMsg })
-      break
+      return alert.show({
+        color: 'blue',
+        title: 'Success',
+        message: successMsg
+      })
     case BAD_REQUEST:
-      alert.show({ color: 'red', title: 'Error', message: res.message })
-      break
+      return alert.show({ color: 'red', title: 'Error', message: res.message })
     case UNAUTHORIZED:
-      alert.show({ color: 'red', title: 'Unauthorized', message: res.message })
-      break
+      return alert.show({
+        color: 'red',
+        title: 'Unauthorized',
+        message: res.message
+      })
     case CONFLICT:
-      alert.show({ color: 'red', title: 'Duplicate', message: res.message })
+      return alert.show({
+        color: 'red',
+        title: 'Duplicate',
+        message: res.message
+      })
     default:
       break
   }
