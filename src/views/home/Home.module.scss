@@ -87,42 +87,38 @@
 
 .Testimonials {
   .testimonialContainer {
-    display: grid;
-    grid-template-columns: 1fr 0.75fr;
-    grid-gap: var(--vertical-gap);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1rem;
 
     article {
-      background-color: var(--black);
-      color: var(--white);
+      background-color: var(--white);
+      color: var(--black);
       padding: 2rem;
       border-radius: var(--rounded-edges);
-      height: fit-content;
       display: flex;
       flex-direction: column;
-      gap: var(--vertical-gap);
 
-      cite {
-        font-weight: 500;
+      .citation {
+        margin-top: 1rem;
+        padding: 1rem 1rem 0 1rem;
+        border-top: 2px solid var(--red);
+        width: fit-content;
+        color: var(--black);
       }
     }
 
     section {
-      display: flex;
-      flex-direction: column;
-      gap: var(--vertical-gap);
-    }
-
-    @media screen and (max-width: 1100px) {
-      grid-template-columns: 1fr;
-
-      section {
-        flex-direction: row;
-      }
+      display: grid;
+      grid-template-columns: 0.5fr 1fr 0.5fr;
+      grid-gap: 0.5rem;
+      align-items: center;
     }
 
     @media screen and (max-width: 850px) {
       section {
-        flex-direction: column;
+        grid-template-columns: 1fr;
       }
     }
   }
