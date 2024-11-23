@@ -10,7 +10,7 @@ const useScrollWatcher = (
     const observerOptions: IntersectionObserverInit = {
       root: null, // Defaults to the browser viewport if not specified
       rootMargin: '0px',
-      threshold: 0.1 // Trigger callback when 10% of the target is visible
+      threshold: 0.3 // Trigger callback when 30% of the target is visible
     }
 
     const observerCallback: IntersectionObserverCallback = entries => {

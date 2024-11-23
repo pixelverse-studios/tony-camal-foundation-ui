@@ -5,6 +5,7 @@ import { Notifications } from '@mantine/notifications'
 
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import Favicon from '../../public/favicon.png'
 
 import '@/styles/reset.scss'
 import '@mantine/core/styles.css'
@@ -12,7 +13,10 @@ import '../styles/app.scss'
 
 export const metadata: Metadata = {
   title: 'The Anthony Camal Foundation',
-  description: ''
+  description: '',
+  icons: {
+    icon: Favicon.src
+  }
 }
 
 const theme = createTheme({

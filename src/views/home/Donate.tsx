@@ -6,7 +6,7 @@ import styles from './Home.module.scss'
 const Donate = () => {
   const routeToGoFundMe = () =>
     window.open(
-      'https://www.gofundme.com/f/tony-camal-foundation?utm_medium=email&utm_source=product&utm_campaign=p_email%2B4803-donation-alert-v5',
+      'https://www.gofundme.com/f/tony-camal-foundation?utm_medium=email&utm_source=product&utm_campaign=p_email%2B4803-donation-alert-v5?amount=50',
       '_blank',
       'noopener,noreferrer'
     )
