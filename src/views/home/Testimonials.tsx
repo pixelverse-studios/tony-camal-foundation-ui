@@ -7,7 +7,7 @@ const Testimonials = () => {
       className={`fullViewSection ${styles.viewContent} ${styles.Testimonials}`}>
       <h1>Testimonials</h1>
       <div className={styles.testimonialContainer}>
-        <article>
+        <article className="card">
           <p>
             "Sensei Anthony Camal was far more than a Sensei to me; he was a
             guiding light, a mentor, and an unwavering source of inspiration.
@@ -35,21 +35,21 @@ const Testimonials = () => {
             more than a sensei, he was a true mentor and an extraordinary human
             being, and I am forever grateful to have had him in my life."
           </p>
-          <p className={styles.citation}>Davit Arakelyan</p>
+          <p className="citation">Davit Arakelyan</p>
         </article>
         <section>
           {/* <div> */}
-          <article>
+          <article className="card">
             <p>
               “Sensei Camal, he was a dad I never had. He taught me to always
               stay strong and never give up because we are judoka. He's the
               strongest person I know and without him I'll never be who I am
               today without him.”
             </p>
-            <p className={styles.citation}>EJ Montero</p>
+            <p className="citation">EJ Montero</p>
           </article>
           {/* </div> */}
-          <article>
+          <article className="card">
             <p>
               "Sensei Camal transformed my life in ways nobody else could. From
               the moment I stepped onto the mat, he saw potential in me that I
@@ -69,9 +69,9 @@ const Testimonials = () => {
               role model, father, husband, professor, and most importantly a
               giver."
             </p>
-            <p className={styles.citation}>Ryan Khumthanom Perez</p>
+            <p className="citation">Ryan Khumthanom Perez</p>
           </article>
-          <article>
+          <article className="card">
             <p>
               “Sensei Camal was more than just an instructor. He would encourage
               me to stay away from negative influences so I can stay out of
@@ -79,10 +79,10 @@ const Testimonials = () => {
               providing me with workout and nutrition plans to help me become a
               better judoka.”
             </p>
-            <p className={styles.citation}>Fernando Aguilar</p>
+            <p className="citation">Fernando Aguilar</p>
           </article>
         </section>
-        <article>
+        <article className="card">
           <p>
             "You would call me, “Qui chang” and tell everyone you purchased an
             action figure judoka in a small box from Japan and I came out as a
@@ -119,7 +119,7 @@ const Testimonials = () => {
             spirit will live on forever through all the stories people will tell
             of how you had impacted their lives."
           </p>
-          <p className={styles.citation}>Steven Perez</p>
+          <p className="citation">Steven Perez</p>
         </article>
       </div>
     </section>

@@ -19,7 +19,7 @@ const Hero = () => {
       id="mission"
       className={`${styles.Mission} ${styles.viewContent} fullViewSection`}>
       <img src={JudoGym.src} alt="judo-gym-image" />
-      <div className={styles.heroCard}>
+      <div className={`${styles.heroCard} card`}>
         <h1>Our Mission</h1>
         <p>
           To introduce to our students the physical skills of Judo and its
