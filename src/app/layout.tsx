@@ -8,7 +8,6 @@ import Footer from '@/components/footer'
 import Favicon from '../../public/favicon.png'
 
 import '@/styles/reset.scss'
-import '@mantine/carousel/styles.css'
 import '@mantine/core/styles.css'
 import '../styles/app.scss'
 
