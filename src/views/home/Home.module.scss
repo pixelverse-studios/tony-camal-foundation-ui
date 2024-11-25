@@ -5,8 +5,15 @@
 }
 
 .Mission {
+  position: relative;
+  height: 100dvh;
+
+  :global(.pageContent) {
+    margin: var(--vertical-offset) auto;
+  }
+
   .heroCard {
-    width: 33rem;
+    width: clamp(18rem, 50vw, 30rem);
     line-height: 1.3;
     display: flex;
     flex-direction: column;
@@ -14,17 +21,15 @@
     background-color: rgb(58 55 55 / 40%);
     box-shadow: 7px 7px 15px 5px rgb(58 55 55);
     color: var(--white);
-    position: absolute;
-    top: 12rem;
 
     h1 {
-      font-size: 3rem;
+      font-size: clamp(2rem, 2.5vw, 3rem);
       font-weight: 600;
     }
 
     p {
       margin: 0;
-      font-size: 1.5rem;
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
     }
 
     button {
@@ -84,13 +89,17 @@
 }
 
 .Explanation {
-  padding-top: 1rem;
-  max-height: var(--view-height);
+  height: fit-content;
+
+  h1 {
+    margin-bottom: 1rem;
+  }
 
   .explContent {
-    display: flex;
-    gap: 1rem;
-    height: calc(100% - 3rem);
+    min-height: 100dvh;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 1rem;
 
     section {
       display: flex;
@@ -99,8 +108,6 @@
     }
 
     section:nth-of-type(1) {
-      flex: 2;
-
       .videoContainer {
         flex: 2.5;
         position: relative;
@@ -108,6 +115,7 @@
         border-radius: var(--rounded-edges);
         border: 1px solid var(--black);
         box-shadow: var(--box-shadow);
+        min-height: 25vh;
 
         ::before {
           content: '';
@@ -126,13 +134,16 @@
       }
 
       article {
-        flex: 1;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+        grid-template-columns: 1fr 1fr;
         grid-gap: 1rem;
 
         p {
           height: 100%;
+        }
+
+        @media screen and (max-width: 750px) {
+          grid-template-columns: 1fr;
         }
       }
     }
@@ -153,16 +164,12 @@
   }
 
   @media screen and (max-width: 1200px) {
-    height: 100%;
-    max-height: unset;
-
     .explContent {
-      flex-direction: column;
-
+      grid-template-columns: 1fr;
       section {
         &:nth-of-type(1) {
           flex: initial;
-          height: 100dvh;
+          min-height: 100dvh;
         }
         &:nth-of-type(2) {
           flex: initial;
@@ -177,73 +184,108 @@
       }
     }
   }
-
-  @media screen and (max-width: 750px) {
-  }
 }
 
 .Testimonials {
-  .testimonialContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    font-size: 1rem;
+  min-height: 100dvh;
+  height: fit-content;
 
-    article {
-      background-color: var(--white);
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  .list {
+    position: relative;
+    margin-bottom: var(--mantine-spacing-md);
+    padding-right: 1rem;
+  }
+
+  .indicator {
+    background-color: var(--white);
+    border-radius: var(--rounded-edges);
+    border: 1px solid var(--charcoal);
+    box-shadow: var(--mantine-shadow-sm);
+
+    @mixin dark {
+      background-color: var(--black);
+      border-color: var(--charcoal);
+    }
+  }
+
+  .tab {
+    z-index: 1;
+    font-weight: 500;
+    transition: color 100ms ease;
+    color: var(--white);
+    transition: var(--hover);
+
+    &:hover {
+      color: var(--red);
+    }
+
+    &[data-active] {
       color: var(--black);
-      padding: 2rem;
-      border-radius: var(--rounded-edges);
-      display: flex;
-      flex-direction: column;
     }
 
-    section {
-      display: grid;
-      grid-template-columns: 0.5fr 1fr 0.5fr;
-      grid-gap: 0.5rem;
-      align-items: center;
-    }
+    @mixin dark {
+      color: var(--black);
 
-    @media screen and (max-width: 850px) {
-      section {
-        grid-template-columns: 1fr;
+      &[data-active] {
+        color: var(--white);
       }
     }
   }
 }
 
 .Donate {
+  position: relative;
+  min-height: 100dvh;
+  height: fit-content;
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: grayscale(0.5);
+    object-fit: cover;
+  }
   .donationContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: clamp(20rem, 100%, 40rem);
+    padding-top: 2.5rem;
 
     article {
       display: flex;
       flex-direction: column;
       gap: var(--vertical-gap);
+    }
 
-      b {
-        color: var(--red);
-        font-weight: 700;
-      }
+    .sensei {
+      background-color: transparent;
+      color: var(--white);
+      border: none;
+      padding: 0;
+      font-weight: bold;
 
-      em {
+      :global(.citation) {
+        margin-top: 0;
         color: var(--white);
-        font-weight: 500;
       }
     }
 
-    .ctaContainer {
-      border-radius: var(--rounded-edges);
-      background-color: rgba(233, 28, 0, 0.25);
-      padding: 3rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: fit-content;
-      gap: var(--vertical-gap);
+    button {
+      margin-top: 1rem;
+      font-weight: 500;
+      width: clamp(15rem, 75%, 30rem);
     }
   }
 

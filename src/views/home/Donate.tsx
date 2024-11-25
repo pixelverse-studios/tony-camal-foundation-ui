@@ -1,6 +1,7 @@
 'use client'
 
 import CallToAction from '@/components/callToAction'
+import Background from '@/assets/DonationBackground.png'
 import styles from './Home.module.scss'
 
 const Donate = () => {
@@ -15,40 +16,30 @@ const Donate = () => {
     <section
       id="donate"
       className={`fullViewSection ${styles.viewContent} ${styles.Donate}`}>
-      <h1>Why Donate?</h1>
-      <div className={styles.donationContainer}>
-        <article>
-          <p>
-            This fund will financially support those who require additional
-            funds to achieve their goals of becoming a better person in society,
-            whether it's for college, trade school, tutoring, or even funding a
-            startup business. This money is not intended for Judo-related
-            expenses but for better life skills.
-          </p>
-          <p>
-            Creed: Tony Camal said{' '}
-            <em>
-              "I have helped many of my students, and that's what I do. Mutual
-              welfare and benefit!
-            </em>
-            " <br />
-            <b>- Jigoro Kano, founder of judo.</b>
-          </p>
-          <p>
-            <em>
-              "Whatever you choose to do in life, just be the best at it!"
-            </em>
-            <br />
-            <b>- Sensei Tony Camal</b>
-          </p>
-        </article>
-        <section className={styles.ctaContainer}>
-          <p>
-            Please consider contributing to the Tony Camal Foundation, as we
-            continue to honor the legacy of our great Sensei.
-          </p>
+      <div className="pageContent">
+        <h1>Make an impact</h1>
+        <img src={Background.src} alt="judo-fighter-image" />
+        <div className={styles.donationContainer}>
+          <article>
+            <p>
+              This fund will financially support those who require additional
+              funds to achieve their goals of becoming a better person in
+              society, whether it's for college, trade school, tutoring, or even
+              funding a startup business. This money is not intended for
+              Judo-related expenses but for better life skills.
+            </p>
+            <p>
+              Please consider contributing to{' '}
+              <em>the Anthony Camal Foundation</em>, as we continue to honor the
+              legacy of our great Sensei.
+            </p>
+          </article>
+          <article className={`card ${styles.sensei}`}>
+            <p>"Whatever you choose to do in life, just be the best at it!"</p>
+            <p className="citation">Sensei Tony Camal</p>
+          </article>
           <CallToAction label="Donate" onClick={routeToGoFundMe} />
-        </section>
+        </div>
       </div>
     </section>
   )

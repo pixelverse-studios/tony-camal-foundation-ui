@@ -8,6 +8,7 @@ import Footer from '@/components/footer'
 import Favicon from '../../public/favicon.png'
 
 import '@/styles/reset.scss'
+import '@mantine/carousel/styles.css'
 import '@mantine/core/styles.css'
 import '../styles/app.scss'
 
@@ -52,7 +53,6 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <MantineProvider theme={theme} defaultColorScheme="dark">
-          {/* <Header2 /> */}
           <Header />
           {children}
           <Footer />
