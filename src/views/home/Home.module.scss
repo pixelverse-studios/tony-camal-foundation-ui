@@ -19,7 +19,7 @@
     flex-direction: column;
     gap: 2rem;
     background-color: rgb(58 55 55 / 40%);
-    box-shadow: 7px 7px 15px 5px rgb(58 55 55);
+    box-shadow: 2px 2px 18px 10px rgb(58, 55, 55);
     color: var(--white);
 
     h1 {
@@ -40,6 +40,7 @@
       margin-top: 2rem;
       border: 1px solid var(--black);
       background-color: var(--black);
+      filter: drop-shadow(5px 5px 10px var(--black));
 
       span {
         display: flex;
@@ -90,16 +91,17 @@
 
 .Explanation {
   height: fit-content;
+  min-height: 100dvh;
 
   h1 {
     margin-bottom: 1rem;
   }
 
   .explContent {
-    min-height: 100dvh;
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-gap: 1rem;
+    min-height: calc(100dvh - 11rem);
 
     section {
       display: flex;
@@ -183,6 +185,11 @@
         }
       }
     }
+    @media screen and (max-width: 800px) {
+      .explContent > section:nth-of-type(1) > .videoContainer {
+        min-height: 40vh;
+      }
+    }
   }
 }
 
@@ -242,10 +249,6 @@
   min-height: 100dvh;
   height: fit-content;
 
-  h1 {
-    margin-bottom: 1rem;
-  }
-
   img {
     position: absolute;
     height: 100%;
@@ -256,12 +259,42 @@
     filter: grayscale(0.5);
     object-fit: cover;
   }
+
+  .sensei {
+    width: clamp(18rem, 50vw, 40rem);
+    margin-top: 2.5rem;
+    background-color: rgb(20 19 19 / 70%);
+    box-shadow: 2px 2px 18px 10px rgb(20 19 19);
+    color: var(--white);
+    border: 1px solid var(--charcoal);
+    font-weight: 500;
+
+    h1 {
+      font-size: clamp(2rem, 2.5vw, 3rem);
+      margin-bottom: 3rem;
+    }
+
+    :global(.citation) {
+      margin-top: 0;
+      color: var(--white);
+      font-weight: 800;
+    }
+
+    @media screen and (max-width: 750px) {
+      width: 100%;
+    }
+  }
+
   .donationContainer {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    width: clamp(20rem, 100%, 40rem);
-    padding-top: 2.5rem;
+
+    em {
+      font-size: 1.3rem;
+      font-weight: 800;
+      font-style: italic;
+    }
 
     article {
       display: flex;
@@ -269,29 +302,28 @@
       gap: var(--vertical-gap);
     }
 
-    .sensei {
-      background-color: transparent;
-      color: var(--white);
-      border: none;
-      padding: 0;
-      font-weight: bold;
-
-      :global(.citation) {
-        margin-top: 0;
-        color: var(--white);
-      }
-    }
-
     button {
       margin-top: 1rem;
       font-weight: 500;
-      width: clamp(15rem, 75%, 30rem);
+      width: 100%;
+      filter: drop-shadow(5px 5px 10px var(--black));
     }
   }
 
   @media screen and (max-width: 1000px) {
-    .donationContainer {
-      grid-template-columns: 1fr;
+    .sensei {
+      h1 {
+        margin-bottom: 1.5rem;
+      }
+
+      .donationContainer {
+        grid-template-columns: 1fr;
+        grid-gap: 1rem;
+
+        p {
+          font-size: 1.1rem;
+        }
+      }
     }
   }
 }

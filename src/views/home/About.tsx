@@ -1,4 +1,4 @@
-import KanoImg from '@/assets/judo-dr-kano.jpg'
+import KanoImg from '@/assets/judo-dr-kano.png'
 import styles from './Home.module.scss'
 
 const About = () => {
@@ -12,20 +12,11 @@ const About = () => {
           <section>
             <div className={styles.videoContainer}>
               <iframe
-                src="https://www.youtube.com/embed/qomNXTQsybA?autoplay=1&mute=1"
-                title=""
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen>
-                <br />
-                Powered by{' '}
-                <a href="https://youtubeembedcode.com">
-                  how to get embed code from youtube
-                </a>{' '}
-                and{' '}
-                <a href="https://howtostopgamstop.com/">
-                  how to cancel gamstop
-                </a>
-              </iframe>
+                src="https://www.youtube.com/embed/qomNXTQsybA?mute=1&playsinline=1"
+                title="Anthony Camal Tribute"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
             <article>
               <p className="card">

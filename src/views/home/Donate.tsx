@@ -1,7 +1,7 @@
 'use client'
 
 import CallToAction from '@/components/callToAction'
-import Background from '@/assets/DonationBackground.png'
+import Background from '@/assets/JudoBow.png'
 import styles from './Home.module.scss'
 
 const Donate = () => {
@@ -17,29 +17,29 @@ const Donate = () => {
       id="donate"
       className={`fullViewSection ${styles.viewContent} ${styles.Donate}`}>
       <div className="pageContent">
-        <h1>Make an impact</h1>
         <img src={Background.src} alt="judo-fighter-image" />
-        <div className={styles.donationContainer}>
-          <article>
-            <p>
-              This fund will financially support those who require additional
-              funds to achieve their goals of becoming a better person in
-              society, whether it's for college, trade school, tutoring, or even
-              funding a startup business. This money is not intended for
-              Judo-related expenses but for better life skills.
-            </p>
-            <p>
-              Please consider contributing to{' '}
-              <em>the Anthony Camal Foundation</em>, as we continue to honor the
-              legacy of our great Sensei.
-            </p>
-          </article>
-          <article className={`card ${styles.sensei}`}>
-            <p>"Whatever you choose to do in life, just be the best at it!"</p>
-            <p className="citation">Sensei Tony Camal</p>
-          </article>
-          <CallToAction label="Donate" onClick={routeToGoFundMe} />
-        </div>
+        <article className={`card ${styles.sensei}`}>
+          <h1>Make an impact</h1>
+          <div className={styles.donationContainer}>
+            <article>
+              <p>
+                Please consider contributing to{' '}
+                <em>the Anthony Camal Foundation</em>, as we continue to honor
+                the legacy of our great Sensei.
+              </p>
+            </article>
+            <article>
+              I have helped a lot of my students that’s what I do. Mutual
+              welfare and benefit! Jigoro Kano founder of judo
+              <p className="citation">Sensei Anthony Camal</p>
+            </article>
+            <article>
+              <p>Whatever you choose to do in life, just be the best at it!</p>
+              <p className="citation">Sensei Anthony Camal</p>
+            </article>
+            <CallToAction label="Donate" onClick={routeToGoFundMe} />
+          </div>
+        </article>
       </div>
     </section>
   )
