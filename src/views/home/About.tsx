@@ -12,9 +12,9 @@ const About = () => {
           <section>
             <div className={styles.videoContainer}>
               <iframe
-                src="https://www.youtube.com/embed/qomNXTQsybA?mute=1&playsinline=1"
+                src="https://www.youtube-nocookie.com/embed/qomNXTQsybA?mute=1&playsinline=1"
                 title="Anthony Camal Tribute"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
             </div>
